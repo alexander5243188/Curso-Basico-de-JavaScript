@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <style>
+        p{color: pink;}
+    </style>
+    <title>While</title>
+</head>
+<body>
+    <header></header>    
+    <main>
+        <section>
+            <button onclick="mostrarTusDatosMiAmor()">Cuales son tus datos mi amor</button>
+            <p>Tus datos mi amor: <output id="tusDatos"></output> </p>
+        </section>
+        <script>
+            let tusDatosMiAmor = ["Graciela", "Alejandra","Albarracin", "Pradel"];
+            function mostrarTusDatosMiAmor(){
+                document.getElementById("tusDatos").innerHTML = tusDatosMiAmor;
+                while(tusDatosMiAmor.length > 0){
+                    let dataAlejandra = tusDatosMiAmor.shift();
+                    console.log(dataAlejandra);
+                }
+            }
+        </script>
+    </main>
+    <footer></footer>
+</body>
+</html>
