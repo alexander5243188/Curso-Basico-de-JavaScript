@@ -18,6 +18,10 @@
             <p> <output id="modelo"></output> </p>
         </section>
         <script>
+            function tuCasaMiAmor(direccion, porcentaje){
+                this.direccion = direccion;
+                this.porcentaje = porcentaje;
+            }
             function tuAutoMiAmor(){
                 let miAuto={
                     marca:"Mitsubishi",
@@ -25,14 +29,16 @@
                     anio:"2015",
                     tuAutoMiAmor: function(){
                         console.log(`Los datos de auto mi amor Alejandra${this.modelo} ${this.anio} ${this.marca}`);
-                    }
+                    }                    
                 };
                 document.getElementById("modelo").innerHTML = miAuto.modelo;
                 console.log(miAuto.marca);
                 console.log(miAuto.modelo);
                 console.log(miAuto.anio);
-                console.log(miAuto.tuAutoMiAmor());
+                console.log(miAuto.tuAutoMiAmor());                
             }
+            let unaCasaMiAmor = new tuCasaMiAmor("San benito", "100%");
+            console.log(unaCasaMiAmor);
         
         </script>
     </main>
