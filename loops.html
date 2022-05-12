@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <style>
+        p{
+            color: bisque;
+        }
+    </style>
+    <title>Loops</title>
+</head>
+<body>
+    <header></header>
+    <main>
+        <section>
+            <button onclick="cualesSonTusDatosMiAmor()">Preciona</button>
+            <p>Tus datos mi AMOR: <output id="resultado"></output></p>
+            <p>Utilizamos for: <output id="resultadoDelForMiAmorAlejandra"></output></p>
+        </section>
+        <script>
+            let tusDatosMiAMor = ["Graciela", "Alejandra","Albarracin", "Pradel"];
+
+            function cualesSonTusDatosMiAmor(){
+                document.getElementById("resultado").innerHTML = tusDatosMiAMor; 
+                setTimeout (forAlejandra, 1000,5,10);
+            }
+            function forAlejandra(){
+                for (let i = 0; i < tusDatosMiAMor.length; i++) {
+                    const dataAlejandra = tusDatosMiAMor[i];
+                    document.getElementById("resultadoDelForMiAmorAlejandra").innerHTML = dataAlejandra; 
+                    tuNombreMiAmor(dataAlejandra);
+                }
+            }  
+            function tuNombreMiAmor(dataAlejandra){
+                document.getElementById("resultadoDelForMiAmorAlejandra").innerHTML = dataAlejandra;
+                //onsole.log(dataAlejandra);
+                otraFormaDeObtenerTusDatosMiAmorAlejandra();
+            }
+            function otraFormaDeObtenerTusDatosMiAmorAlejandra(){
+                for (const dataAlejandra of tusDatosMiAMor) {
+                    console.log(dataAlejandra);
+                }
+            }
+        </script>
+    </main>
+    <footer></footer>
+</body>
+</html>
