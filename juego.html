@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Juego</title>
+</head>
+
+<body>
+    <header></header>
+    <main>
+        <section class="opciones">
+            <center class="centro">
+                <div class="container-piedra">
+                    <p class="titulo">Piedra</p>
+                    <img src="./img/piedra.png" alt="Piedra" id="piedra" onclick="juego(0)"" class=" piedra">
+                </div>
+                <div class="container-piedra">
+                    <p class="titulo">Papel</p>
+                    <img src="./img/papel.png" alt="Papel" id="papel" onclick="juego(1)" class="papel">
+                </div>
+                <div>
+                    <p class="titulo">Tijera</p>
+                    <img src="./img/tijera.png" alt="Tijera" id="tijera" onclick="juego(2)" class="tijera">
+                </div>
+            </center>
+
+        </section>
+        <section class="">
+            <p class="resultado">Resultado: <output id="resultado"></output></p>
+        </section>
+    </main>
+    <footer></footer>
+    <script>
+        let dataAlejandra = ["piedra", "papel", "tijera"];
+        function juego(juegoAlejandra) {
+            if (juegoAlejandra == 0) {
+                piedra(juegoAlejandra);
+            } else if (juegoAlejandra == 1) {
+                papel(juegoAlejandra);
+            } else if (juegoAlejandra == 2) {
+                tijera(juegoAlejandra);
+            }
+        }
+        function piedra(juegoAlejandra) {
+            let ordenador = aleatorioAlejandra();
+            if (ordenador === 0) {
+                console.log("Alejandra: Piedra VS Ordenador: Piedra = Empate");
+                document.getElementById("resultado").innerHTML = "Empate";
+            }
+            else if (ordenador === 1) {
+                console.log("Alejandra: Piedra VS Ordenador Papel = Gana Ordendor con Papel");
+                document.getElementById("resultado").innerHTML = "Gana Ordendor con Papel";
+            }
+            else if (ordenador === 2) {
+                console.log("Alejandra: Piedra VS Ordenador: Tijera = Gana Alejandra con Piedra");
+                document.getElementById("resultado").innerHTML = "Gana Alejandra con Piedra";
+            }
+        }
+        function papel(juegoAlejandra) {
+            let ordenador = aleatorioAlejandra();
+            if (ordenador === 0) {
+                console.log("Alejandra: Papel VS Ordenador: Piedra = Gana Alejandra con Papel");
+                document.getElementById("resultado").innerHTML = "Gana Alejandra con Papel";
+            }
+            else if (ordenador === 1) {
+                console.log("Alejandra: Papel VS Ordenador: Papel = Empate");
+                document.getElementById("resultado").innerHTML = "Empate";
+            }
+            else if (ordenador === 2) {
+                console.log("Alejandra: Papel VS Ordenador: Tijera = Gana Ordenador Tijera");
+                document.getElementById("resultado").innerHTML = "Gana Ordenador con Tijera";
+            }
+        }
+        function tijera(juegoAlejandra) {
+            let ordenador = aleatorioAlejandra();
+            if (ordenador === 0) {
+                console.log("Alejandra: Tijera VS Ordenador: Piedra = Gana Ordenador Piedra");
+                document.getElementById("resultado").innerHTML = "Gana Ordenador con Piedra";
+            }
+            else if (ordenador === 1) {
+                console.log("Alejandra: Tijera VS Ordenador: papel = Gana Alejandra Tijera");
+                document.getElementById("resultado").innerHTML = "Gana Alejandra con Tijera";
+            }
+            else if (ordenador === 2) {
+                console.log("Alejandra: Tijera VS Ordenador: Tijera = Empate");
+                document.getElementById("resultado").innerHTML = "Empate";
+            }
+        }
+        function aleatorioAlejandra() {
+            let data = Math.floor(Math.random() * dataAlejandra.length)
+            return data;
+        }
+    </script>
+</body>
+
+</html>

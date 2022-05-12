@@ -1,0 +1,34 @@
+#papel{
+    height: 100px;
+    height: 100px;
+}
+.centro {
+    display: flex; 
+    flex-direction: row;
+}
+.centro > div {
+    margin: auto;
+}
+.titulo{
+    font-size: 20px;
+    font-weight: bold;
+    color: #FF0000;
+}
+.resultado{
+    color: pink;
+}
+#piedra{
+    height: 100px;
+    height: 100px;
+}
+#tijera{
+    height: 100px;
+    height: 100px;
+}
+.juego{
+    height: 100px;
+    height: 100px;  
+}
+body{
+    background-color: #000000;
+}
