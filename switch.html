@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch</title>
+</head>
+<body>
+    <header></header>
+    <main>
+        <div>
+            <input id="valorAlejandra" class="valorAlejandra" type="text"><br>
+            <button type="" onclick="switchAlejandra()" value="Enviar"> Enviar</button>
+        </div>
+
+        <script>
+            function switchAlejandra(){
+                let ingresoDatoAlejandra = document.getElementById('valorAlejandra');
+                let valorEnteroAlejandra = parseInt(ingresoDatoAlejandra.value);
+
+                
+                switch(valorEnteroAlejandra){
+                    case 1:
+                        console.log("Mi amor Alejandra el valor es 1");
+                        //document.getElementById("valorAlejandra").value = "";
+                        limpiarIDAlejandra()
+                        //break;
+                    case 2:
+                        console.log("Mi amor Alejandra el valor es 2");
+                        //document.getElementById("valorAlejandra").value = "";
+                        limpiarIDAlejandra();
+                        //break;
+                    default:
+                        console.log("Mi amor Alejandra introduciste "+valorEnteroAlejandra);
+                        //document.getElementById("valorAlejandra").value = "";
+                        limpiarIDAlejandra();
+                }
+            }
+            function limpiarIDAlejandra(){
+                document.getElementById("valorAlejandra").value = "";
+            }
+            function limpiarCLASEAlejandra(){
+                document.getElementsByClassName("valorAlejandra")[0].value = "";
+            }
+            function limpiarTAGAlejandra(){
+                document.getElementsByTagName("valorAlejandra")[0].value = "";
+            }
+            
+        </script>
+    </main>
+    <footer></footer>
+</body>
+</html>
