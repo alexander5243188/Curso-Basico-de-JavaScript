@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/styleAutos.css">
+    <title>Objetos Auto</title>
+</head>
+
+<body>
+    <header></header>
+    <main>
+        <section>
+            <div class="form-group">
+                <label>Cuantos autos quieres registrar: <input type="text" id="limiteAutosAlejandra"> </label>
+                <button onclick="cantidadAutosAlejandra()">Registrar</button>
+            </div>
+            <br>
+            <div class="form-group">
+                <label>Ingrese la marca: <input type="text" id="marcaAutoAlejandra"></lab>
+                    <label>Ingrese el modelo: <input type="text" id="modeloAutoAlejandra"></label>
+                    <label>Ingrese el año: <input type="text" id="anioAutoAlejandra"></label>
+                    <label>Ingrese el color: <input type="text" id="colorAutoAlejandra"></label>
+                    <button onclick="llenadoAutosAlejandra()" class="llenadoAlejandra">
+                        Enviar
+                    </button>
+            </div>
+            <div>
+                <label for="" id="registrosAlejandra">Registro: </label>
+            </div>
+        </section>
+        <section id="ale"></section>
+        <script>
+            let autosAlejandra = [];
+            let control, autosAle = 0;
+            let contador = 0;
+
+
+            function cantidadAutosAlejandra() {
+                let limiteAutosAlejandra = document.getElementById("limiteAutosAlejandra").value;
+                let limiteAlejandra = parseInt(limiteAutosAlejandra);
+                //console.log(typeof(limiteAlejandra));               
+                //cadaModeloAutoAlejandra(limiteAlejandra)
+                control = limiteAlejandra;
+                //console.log(autosAlejandra.length);
+                autosAlejandra.shift();
+                //console.log(autosAlejandra.length); 
+                limpiarIDALimiteAlejandra()
+            }
+            function llenadoAutosAlejandra() {
+                let mAlejandra = document.getElementById("marcaAutoAlejandra").value;
+                let moAlejandra = document.getElementById("modeloAutoAlejandra").value;
+                let aAlejandra = document.getElementById("anioAutoAlejandra").value;
+                let cAlejandra = document.getElementById("colorAutoAlejandra").value;
+                let llenamosAlejandra = new cadaModeloAutoAlejandra(mAlejandra, moAlejandra, aAlejandra, cAlejandra);
+                //autosAlejandra.push(llenamosAlejandra);
+                //console.log(autosAlejandra);
+                autosAlejandra.push(llenamosAlejandra);
+                console.log(autosAlejandra);
+                console.log("contador " + contador + "control " + control);
+                contador += 1;
+                if (contador === control) {
+                    console.log("Este es el control " + contador + " +++ " + contador);
+                    console.log("*********** Llenaste mi amor **************");
+                    mostrarDatosAlejandra();
+                }
+                limpiarIDAlejandra()
+
+            }
+            function cadaModeloAutoAlejandra(marca, modelo, anio, color) {
+                this.marca = marca,
+                    this.modelo = modelo,
+                    this.anio = anio,
+                    this.color = color
+            }
+            function limpiarIDAlejandra() {
+                document.getElementById("marcaAutoAlejandra").value = "";
+                document.getElementById("modeloAutoAlejandra").value = "";
+                document.getElementById("anioAutoAlejandra").value = "";
+                document.getElementById("colorAutoAlejandra").value = "";
+            }
+            function limpiarIDALimiteAlejandra() {
+                let data = document.getElementById("limiteAutosAlejandra").value;
+                document.getElementById("limiteAutosAlejandra").value = "";
+                console.log("Este dato se elimino mi amor " + data);
+            }
+            function mostrarDatosAlejandra() {
+                let table = document.createElement('table');
+                let thead = document.createElement('thead');
+                let tbody = document.createElement('tbody');
+                
+                table.appendChild(thead)                ;
+                table.appendChild(tbody);
+
+                document.getElementById('ale').appendChild(table);
+
+            }
+        </script>
+    </main>
+    <footer></footer>
+</body>
+
+</html>
